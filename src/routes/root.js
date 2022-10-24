@@ -7,7 +7,8 @@ const router = Router()
 router.get('/', (req, res) => {
   logger.info('Inside the root path')
   const title = process.env.TITLE || 'Server'
-  res.send({ msg: title })
+  const introname = process.env.INTRONAME || 'Hello'
+  res.send({ msg: title, introname })
 })
 
 export default router
