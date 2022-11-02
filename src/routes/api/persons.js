@@ -1,25 +1,50 @@
-import { Router } from "express";
+import { Router } from 'express'
+
+import {
+  getPersons,
+  getPerson,
+  createPerson,
+  updatePerson,
+  deletePerson,
+} from '../../modules/persons'
 
 const router = Router()
 
 router.get('/', (req, res) => {
-  res.send({ msg: 'Get All Persons' })
+  const persons = getPersons()
+  res.send(persons)
 })
 
 router.get('/:id', (req, res) => {
-  res.send({ msg: `Geting Person ${req.params.id}` })
+  const person = getPerson(req.params.id)
+  if (person) {
+    res.send(person)
+  }
+  res.status(404).send({ msg: 'Person not found' })
 })
 
 router.post('/', (req, res) => {
-  res.send({ msg: 'Creating a new Person' })
+  const newPerson = createPerson(req.body)
+  if (newPerson) {
+    res.status(201).send(newPerson)
+  }
+  res.status(400).send({ msg: 'Bad request' })
 })
 
 router.put('/:id', (req, res) => {
-  res.send({ msg: `Updating Person ${req.params.id}` })
+  const updatedPerson = updatePerson(req.params.id, req.body)
+  if (updatedPerson) {
+    res.send(updatedPerson)
+  }
+  res.status(404).send({ msg: 'Person not found' })
 })
 
 router.delete('/:id', (req, res) => {
-  res.send({ msg: `Deleting Person ${req.params.id}` })
+  const deleted = deletePerson(req.params.id)
+  if (deleted) {
+    res.send({ msg: `Person ${req.params.id} Deleted` })
+  }
+  res.status(404).send({ msg: 'Person not found' })
 })
 
 export default router
