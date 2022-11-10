@@ -2,10 +2,10 @@
   "name": "server-node",
   "version": "1.0.0",
   "description": "Basic REST API Server",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./src --out-dir ./build",
+    "build": "./node_modules/.bin/babel ./src --out-dir ./build",
     "postbuild": "prisma generate",
     "start": "node ./build/index.js",
     "dev": "nodemon --exec npx babel-node src/index.js",
