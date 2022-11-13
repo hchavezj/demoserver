@@ -6,7 +6,7 @@ import {
   createPerson,
   updatePerson,
   deletePerson,
-} from '../../modules/persons'
+} from '../../models/persons'
 
 const router = Router()
 
