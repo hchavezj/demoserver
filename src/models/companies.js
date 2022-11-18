@@ -6,7 +6,7 @@ export const getCompany = async (id) =>
   db.company.findUnique({
     where: { companyId: id },
     include: {
-      Department: true,
+      departments: true,
     },
   })
 

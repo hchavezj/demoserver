@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel ./src --out-dir ./build",
+    "build": "babel ./src --out-dir ./build",
     "postbuild": "prisma generate",
     "start": "node ./build/index.js",
     "dev": "nodemon --exec npx babel-node src/index.js",
@@ -43,5 +43,14 @@
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
     "uuid": "^9.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hchavezj/demoserver.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/hchavezj/demoserver/issues"
+  },
+  "homepage": "https://github.com/hchavezj/demoserver#readme"
 }
