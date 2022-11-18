@@ -2,10 +2,10 @@
   Warnings:
 
   - A unique constraint covering the columns `[email]` on the table `Employees` will be added. If there are existing duplicate values, this will fail.
-  - Added the required column `updateAt` to the `Company` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `updateAt` to the `Department` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `updatedAt` to the `Company` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `updatedAt` to the `Department` table without a default value. This is not possible if the table is not empty.
   - Added the required column `email` to the `Employees` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `updateAt` to the `Employees` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `updatedAt` to the `Employees` table without a default value. This is not possible if the table is not empty.
 
 */
 -- AlterTable
